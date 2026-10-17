@@ -1,0 +1,19 @@
+{
+ "W": 1080,
+ "H": 1920,
+ "speed": 1.08,
+ "lead": 0.15,
+ "tail": 0.2,
+ "outro": 1.4,
+ "bgmLUFS": -32,
+ "tts": "index",
+ "voice": "zh-CN-YunyangNeural",
+ "rate": "+15%",
+ "title": [
+  "扎克伯格亲口复盘",
+  "Meta做AI的4个打法！"
+ ],
+ "source": "Cheeky Pint #35 · Zuckerberg & Alexandr Wang",
+ "video": "https://www.youtube.com/watch?v=XfdIhd1g6EI",
+ "onepod": "https://onepod.site/p/Ipl0wXpi6iF1tbkQ1CGcbaH9neg/"
+}
