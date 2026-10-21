@@ -6,7 +6,7 @@
 #   查能量曲线：python repause.py <项目> --env 1 2.0 3.6   （第 1 句 2.0–3.6 秒）
 import sys, os, json, difflib
 from common import *
-TARGET = {"，": .26, "、": .16, "：": .32, "；": .36, "。": .48, "？": .48, "！": .48}
+TARGET = {k: v * float(os.environ.get("PAUSE_SCALE", 1)) for k, v in {"，": .26, "、": .16, "：": .32, "；": .36, "。": .48, "？": .48, "！": .48}.items()}   # 快节奏：PAUSE_SCALE=.5
 P = os.path.abspath(sys.argv[1])
 if "--env" in sys.argv:
     i = sys.argv.index("--env"); n, a, b = int(sys.argv[i + 1]), float(sys.argv[i + 2]), float(sys.argv[i + 3])

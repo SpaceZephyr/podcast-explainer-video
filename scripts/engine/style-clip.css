@@ -1,0 +1,17 @@
+/* —— 一分钟原声切片版（参考小红书「硅谷好胖友」）：黑底，顶部「人物：观点」白字黄重点，中间通栏原片，下方中英字幕，底部大字结论 —— */
+#tbg, #tbg2 { display: none; }
+#hd { top: 120px; left: 40px; right: 40px; font-family: "PingFang SC"; font-weight: 900; font-style: normal; text-shadow: none; letter-spacing: 1px; line-height: 1.25; }
+#hd .t1 { display: block; font-size: 50px; font-weight: 700; color: #fff; }
+#hd .t2 { display: block; margin-top: 18px; font-size: 76px; color: #fff; white-space: nowrap; }
+#hd y, .take y { color: #FFD400; }
+.win { left: 0; top: 470px; width: 1080px; height: 608px; border-radius: 0; box-shadow: none; }
+.qs { top: 1112px; }
+.qs .zh { font-family: "PingFang SC"; font-weight: 800; color: #fff; }
+.qs .en { color: #8b8f99; font-size: 25px; }
+.who { position: absolute; left: 28px; bottom: 26px; padding: 8px 18px; background: rgba(0,0,0,.7); border-left: 6px solid #FFD400; white-space: nowrap; }
+.who b { font-size: 30px; font-weight: 800; }
+.who i { font-style: normal; font-size: 22px; color: #c9ccd6; margin-left: 12px; }
+.take { position: absolute; left: 40px; right: 40px; top: 1300px; text-align: center; font-family: "PingFang SC"; font-weight: 900; color: #fff; white-space: nowrap; }
+.take .k { font-size: 84px; line-height: 1.15; }
+.take .s { font-size: 40px; font-weight: 700; color: #d6d8de; margin-top: 18px; }
+#src { top: 1566px; font-size: 22px; color: #555a66; }

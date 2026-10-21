@@ -1,0 +1,9 @@
+{
+ "W": 1080, "H": 1620,
+ "winX": 0, "winTop": 470, "winW": 1080, "winH": 608, "winR": 0,
+ "speed": 1.0, "lead": 0.05, "tail": 0.1, "outro": 0.8,
+ "bgmLUFS": -40, "hardCut": true,
+ "title": ["Figma CEO 回应 Claude Design：", "别把<y>模型进步</y>当成<y>产品进步</y>"],
+ "source": "All-In · Dylan Field: Is AI Replacing Designers?",
+ "video": "https://www.youtube.com/watch?v=2Zj6uMv3kTA"
+}

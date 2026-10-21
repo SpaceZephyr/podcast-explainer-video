@@ -7,7 +7,7 @@ P="$(cd "$1" && pwd)"; URL="$2"; shift 2
 ARGS=(); for r in "$@"; do ARGS+=(--download-sections "*$r"); done
 cd "$P/assets/src"
 for i in 1 2 3; do   # 偶发 SSL 断开，重试
-  uvx yt-dlp -f "bv*[height<=720][ext=mp4]+ba[ext=m4a]/b[height<=720]" --merge-output-format mp4 "${ARGS[@]}" -o 'clip_%(section_start)s.%(ext)s' "$URL" > fetch.log 2>&1 && break
+  uvx yt-dlp ${YTDLP_COOKIES---cookies-from-browser chrome} -f "bv*[height<=720][ext=mp4]+ba[ext=m4a]/b[height<=720]" --merge-output-format mp4 "${ARGS[@]}" -o 'clip_%(section_start)s.%(ext)s' "$URL" > fetch.log 2>&1 && break
   echo "  下载失败，重试 $i"; sleep 5
 done
 ls -1 clip_*.mp4

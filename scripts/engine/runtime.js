@@ -30,6 +30,7 @@
   window.seek = function (t) {
     if (!els) init();
     for (const s of scenes) {
+      if (window.PV.hardCut) { const on = t >= s.a && t < s.b; s.el.style.display = on ? "block" : "none"; s.el.style.opacity = 1; s.el.style.transform = ""; continue; }
       const vin = clamp((t - (s.a - .35)) / .35), vout = clamp(((s.b + .35) - t) / .35);
       const v = Math.min(vin, vout);
       s.el.style.display = v <= 0 ? "none" : "block";
@@ -58,7 +59,7 @@
         case "count": { const v = o.c[0] + (o.c[1] - o.c[0]) * eo(p); o.el.textContent = Math.round(v); op = 1; break; }
         case "none": op = p >= 1 ? 1 : 0; break;
       }
-      if (o.out != null) op *= 1 - clamp((t - o.out) / .35);
+      if (o.out != null) op *= 1 - clamp((t - o.out) / (+o.el.dataset.od || .35));   // data-od：淡出时长，字幕换句用 0.01 硬切
       if (o.kf) { const k = kfAt(o.kf, t); x += k.x || 0; y += k.y || 0; s *= k.s ?? 1; r += k.r || 0; op *= k.o ?? 1; }
       o.el.style.opacity = op;
       o.el.style.transform = (x || y || s !== 1 || r) ? `translate(${x}px,${y}px) scale(${s}) rotate(${r}deg)` : "";
@@ -66,6 +67,9 @@
     const c = caps.find(c => t >= c.a && t < c.b);
     const txt = c ? c.text : "";
     if (capEl.textContent !== txt) capEl.textContent = txt;
+    // 字幕换行时轻微弹一下（config.capPop，快剪版用）
+    const pop = window.PV.capPop || 0, q = c ? clamp((t - c.a) / .16) : 1;
+    capEl.style.transform = pop && q < 1 ? `scale(${1 + pop * (1 - eo(q))})` : "";
   };
   window.addEventListener("load", () => { if (!window.__PV_RENDER__) { const t0 = performance.now(); (function f() { seek(((performance.now() - t0) / 1000) % PV_TIMELINE.duration); requestAnimationFrame(f); })(); } else seek(0); });
 })();

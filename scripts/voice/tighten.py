@@ -1,9 +1,9 @@
 # 收紧停顿：去掉每句首尾静音，句内超过 MAX 秒的静音压到 KEEP 秒（就地改 voice_raw/）
 # 用法：python tighten.py <项目> [句号...]（反复跑没问题）
-import sys, wave, glob
+import sys, wave, glob, os
 import numpy as np
 
-MAX, KEEP, EDGE, DB = .4, .35, .03, -42
+MAX, KEEP, EDGE, DB = float(os.environ.get("TIGHT_MAX", .4)), float(os.environ.get("TIGHT_KEEP", .35)), .03, -42   # 快节奏：TIGHT_MAX=.2 TIGHT_KEEP=.12
 ids = {f"s{int(a):02d}.wav" for a in sys.argv[2:] if a.isdigit()}
 for p in sorted(glob.glob(f"{sys.argv[1]}/voice_raw/s*.wav")):
     if ids and p.split("/")[-1] not in ids: continue

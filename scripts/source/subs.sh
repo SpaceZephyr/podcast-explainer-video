@@ -4,7 +4,7 @@
 set -e
 P="$(cd "$1" && pwd)"; URL="$2"; shift 2
 cd "$P/assets/src"
-for i in 1 2 3; do uvx yt-dlp --skip-download --write-auto-subs --sub-langs "en.*" --sub-format vtt -o 'subs' "$URL" > subs.log 2>&1 && break; sleep 5; done
+for i in 1 2 3; do uvx yt-dlp ${YTDLP_COOKIES---cookies-from-browser chrome} --skip-download --write-auto-subs --sub-langs "en.*" --sub-format vtt -o 'subs' "$URL" > subs.log 2>&1 && break; sleep 5; done
 python3 - "$@" <<'PY'
 import re, glob, sys
 f = sorted(glob.glob("subs*.vtt"))[0]; s = open(f).read()
