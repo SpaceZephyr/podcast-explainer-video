@@ -53,4 +53,6 @@
 > 来源：All-In Podcast，Dylan Field 访谈
 > #Figma #AI产品 #ClaudeDesign #产品经理 #播客
 
+话题避坑：#奥特曼 在小红书是奥特曼玩具的话题，Sam Altman 用 #SamAltman / #OpenAI；#AI 选联想时会和下一个话题粘在一起（变成「#人工智能#AI」），别用，换成 #AI安全 #AI落地 这类。
+
 避开 AI 腔：不写「是 X，不是 Y」的对仗金句，不用排比收尾，不给读者下指令。

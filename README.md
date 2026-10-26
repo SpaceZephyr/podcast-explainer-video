@@ -5,7 +5,7 @@
 | skill | 位置 | 做什么 |
 |---|---|---|
 | `podcast-explainer-video` | 仓库根目录 | 2–5 分钟解读视频：旁白串场 + 多段原声，支持快剪原声版（2:3，跟着字幕切镜头，原声配中英字幕） |
-| `podcast-clip-video` | `clip/` | 1 分钟单观点原声切片：没有旁白，顶部「人物：观点」大标题，下方中英字幕，底部大字结论 |
+| `podcast-clip-video` | `clip/` | 1 分钟单观点原声切片：没有旁白，顶部「人物：观点」大标题，下方中英字幕，底部大字结论；`clip/batch/` 批量生成、并行渲染、定时发布到小红书 |
 
 装第二个 skill：`ln -s ~/.claude/skills/podcast-explainer-video/clip ~/.claude/skills/podcast-clip-video`
 
